@@ -1,11 +1,9 @@
-import logo from './logo.jpg';
+import logo from "./logo.png";
 
 function Header() {
-    return (
-        <header>
-            <img src={logo} alt="Little Lemon Logo" />
-        </header>
-    );
-};
+  return (
+    <img src={logo} alt="Little Lemon logo" />
+  );
+}
 
 export default Header;

@@ -7,11 +7,11 @@ function Nav() {
         </li>
 
         <li>
-          <Link to="/">About</Link>
+          <Link to="/about">About</Link>
         </li>
 
         <li>
-          <Link to="/">Menu</Link>
+          <Link to="/menu">Menu</Link>
         </li>
 
         <li>
@@ -19,11 +19,11 @@ function Nav() {
         </li>
 
         <li>
-          <Link to="/">Order Online</Link>
+          <Link to="/order-online">Order Online</Link>
         </li>
 
         <li>
-          <Link to="/">Login</Link>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>

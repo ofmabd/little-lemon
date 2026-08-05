@@ -2,6 +2,10 @@ import { Routes, Route } from "react-router-dom";
 
 import Homepage from "./Homepage";
 import BookingPage from "./BookingPage";
+import AboutPage from "./AboutPage";
+import MenuPage from "./MenuPage";
+import OrderOnlinePage from "./OrderOnlinePage";
+import LoginPage from "./LoginPage";
 
 function Main() {
     return (

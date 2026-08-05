@@ -8,7 +8,7 @@ import MenuPage from "./MenuPage";
 import OrderOnlinePage from "./OrderOnlinePage";
 import LoginPage from "./LoginPage";
 
-function initializeTimes() {
+export function initializeTimes() {
   return [
     "17:00",
     "18:00",
@@ -18,37 +18,37 @@ function initializeTimes() {
   ];
 }
 
-function updateTimes(state, action) {
-    return state;
+export function updateTimes(state, action) {
+  return state;
 }
 
 function Main() {
-    const [availableTimes, dispatch] = useReducer(
-        updateTimes,
-        [],
-        initializeTimes
-    );
+  const [availableTimes, dispatch] = useReducer(
+    updateTimes,
+    [],
+    initializeTimes
+  );
 
-    return (
+  return (
     <main>
-       <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route
-                path="/booking"
-                element={
-                    <BookingPage
-                        availableTimes={availableTimes}
-                        dispatch={dispatch}
-                    />
-                }
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/booking"
+          element={
+            <BookingPage
+              availableTimes={availableTimes}
+              dispatch={dispatch}
             />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/menu" element={<MenuPage />} />
-            <Route path="/order-online" element={<OrderOnlinePage />} />
-            <Route path="/login" element={<LoginPage />} />
-        </Routes>
+          }
+        />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/order-online" element={<OrderOnlinePage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
     </main>
-    );
+  );
 }
 
 export default Main;

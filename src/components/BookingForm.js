@@ -1,21 +1,24 @@
 import { useState } from "react";
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("17:00");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
-const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = (e) => {
+  e.preventDefault();
 
-    console.log({
-        date,
-        time,
-        guests,
-        occasion,
-    });
-}
+  const formData = {
+    date,
+    time,
+    guests,
+    occasion,
+  };
+
+  submitForm(formData);
+};
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -29,23 +32,25 @@ const handleSubmit = (e) => {
       <input
         type="date"
         id="res-date"
+        required
         value={date}
         onChange={(e) => {
-            setDate(e.target.value);
-            dispatch(e.target.value);
+          setDate(e.target.value);
+          dispatch(e.target.value);
         }}
       />
 
       <label htmlFor="res-time">Choose time</label>
       <select
         id="res-time"
+        required
         value={time}
         onChange={(e) => setTime(e.target.value)}
       >
         {availableTimes.map((availableTime) => (
-            <option key={availableTime} value={availableTime}>
-              {availableTime}
-            </option>
+          <option key={availableTime} value={availableTime}>
+            {availableTime}
+          </option>
         ))}
       </select>
 
@@ -55,12 +60,15 @@ const handleSubmit = (e) => {
         id="guests"
         min="1"
         max="12"
+        required
         value={guests}
         onChange={(e) => setGuests(e.target.value)}
       />
 
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion"
+      <select
+        id="occasion"
+        required
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
       >

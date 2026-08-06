@@ -1,11 +1,3 @@
-window.fetchAPI = jest.fn(() => [
-  "17:00",
-  "18:00",
-  "19:00",
-  "20:00",
-  "21:00",
-]);
-
 import { initializeTimes, updateTimes } from "./Main";
 
 test("initializeTimes returns available booking times", () => {

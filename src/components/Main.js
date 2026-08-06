@@ -30,10 +30,10 @@ function Main() {
   );
 
   function submitForm(formData) {
-  if (submitAPI(formData)) {
-    navigate("/confirmed");
+    if (submitAPI(formData)) {
+        navigate("/confirmed");
+    }
   }
-}
 
   return (
     <main>

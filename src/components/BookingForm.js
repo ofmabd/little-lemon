@@ -98,3 +98,4 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 }
 
 export default BookingForm;
+

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import BookingForm from "./BookingForm";
 
-test("Renders the BookingForm label", () => {
+const renderBookingForm = () =>
   render(
     <BookingForm
       availableTimes={[
@@ -12,10 +12,37 @@ test("Renders the BookingForm label", () => {
         "21:00",
       ]}
       dispatch={() => {}}
+      submitForm={() => {}}
     />
   );
 
-  const label = screen.getByText("Choose date");
+test("Renders the BookingForm label", () => {
+  renderBookingForm();
 
+  const label = screen.getByText("Choose date");
   expect(label).toBeInTheDocument();
+});
+
+test("Date input is required", () => {
+  renderBookingForm();
+
+  const dateInput = screen.getByLabelText("Choose date");
+  expect(dateInput).toBeRequired();
+});
+
+test("Guests input has correct min and max", () => {
+  renderBookingForm();
+
+  const guestsInput = screen.getByLabelText("Number of guests");
+
+  expect(guestsInput).toHaveAttribute("min", "1");
+  expect(guestsInput).toHaveAttribute("max", "12");
+});
+
+test("Submit button is disabled when form is invalid", () => {
+  renderBookingForm();
+
+  const submitButton = screen.getByDisplayValue("Make Your Reservation");
+
+  expect(submitButton).toBeDisabled();
 });

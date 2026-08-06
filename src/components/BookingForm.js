@@ -6,6 +6,13 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
+  const isFormValid =
+    date !== "" &&
+    guests >= 1 &&
+    guests <= 12 &&
+    occasion !== "" &&
+    time !== "";
+
  const handleSubmit = (e) => {
   e.preventDefault();
 
@@ -33,6 +40,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         type="date"
         id="res-date"
         required
+        min={new Date().toISOString().split("T")[0]}
         value={date}
         onChange={(e) => {
           setDate(e.target.value);
@@ -79,7 +87,12 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         <option>Other</option>
       </select>
 
-      <input type="submit" value="Make Your Reservation" />
+      <input
+        type="submit"
+        value="Make Your Reservation"
+        disabled={!isFormValid}
+        aria-label="Make Your Reservation"
+      />
     </form>
   );
 }

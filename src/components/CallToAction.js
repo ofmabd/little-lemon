@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import restaurant from "../images/restaurant.jpg";
+import "./CallToAction.css";
 
 function CallToAction() {
   return (

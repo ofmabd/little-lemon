@@ -1,10 +1,49 @@
-function Specials () {
-    return (
-        <section>
-            <h2>This Week's Specials</h2>
-            <p>Our featured menu items.</p>
-        </section>
-    )
+import "./Specials.css";
+import { Link } from "react-router-dom";
+
+import SpecialCard from "./SpecialCard";
+
+import GreekSalad from "../images/greek-salad.jpg";
+import Bruschetta from "../images/bruschetta.jpg";
+import LemonDessert from "../images/lemon-dessert.jpg";
+
+function Specials() {
+  return (
+    <section className="specials">
+      <div className="container specials-header">
+        <h2>This Week's Specials</h2>
+
+        <Link to="/menu">
+            <button aria-label="View Online Menu">
+                Online Menu
+            </button>
+        </Link>
+      </div>
+
+      <div className="container specials-grid">
+        <SpecialCard
+          image={GreekSalad}
+          title="Greek Salad"
+          price="$12.99"
+          description="Fresh lettuce, tomatoes, cucumbers, olives, feta cheese, and our homemade dressing."
+        />
+
+        <SpecialCard
+          image={Bruschetta}
+          title="Bruschetta"
+          price="$8.99"
+          description="Grilled bread topped with fresh tomatoes, garlic, basil, olive oil, and parmesan."
+        />
+
+        <SpecialCard
+          image={LemonDessert}
+          title="Lemon Dessert"
+          price="$6.99"
+          description="A traditional homemade lemon cake with a light citrus flavor and whipped cream."
+        />
+      </div>
+    </section>
+  );
 }
 
 export default Specials;

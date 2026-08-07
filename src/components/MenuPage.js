@@ -1,8 +1,8 @@
 import "./MenuPage.css";
 
-import GreekSalad from "../images/greek-salad.jpg";
+import GreekSalad from "../images/greeksalad.jpg";
 import Bruschetta from "../images/bruschetta.jpg";
-import LemonDessert from "../images/lemon-dessert.jpg";
+import LemonDessert from "../images/lemondessert.jpg";
 import Fish from "../images/fish.jpg";
 import VodkaPenne from "../images/vodkapenne.jpg";
 

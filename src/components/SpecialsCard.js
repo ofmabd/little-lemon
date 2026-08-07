@@ -1,4 +1,4 @@
-function SpecialCard({ image, title, price, description }) {
+function SpecialsCard({ image, title, price, description }) {
   return (
     <article className="special-card">
       <img src={image} alt={title} />
@@ -12,11 +12,11 @@ function SpecialCard({ image, title, price, description }) {
         <p>{description}</p>
 
         <button aria-label={`Order ${title}`}>
-          Order Delivery 🚚
+          Order Delivery
         </button>
       </div>
     </article>
   );
 }
 
-export default SpecialCard;
+export default SpecialsCard;

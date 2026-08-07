@@ -14,7 +14,7 @@ const testimonials = [
       "One of the best Mediterranean restaurants in Chicago. Fresh ingredients and excellent service.",
   },
   {
-    name: "Emily R.",
+    name: "Carmen P.",
     rating: "★★★★★",
     review:
       "Everything was delicious! The Greek Salad and Lemon Dessert were my favorites.",

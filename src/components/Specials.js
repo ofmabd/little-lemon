@@ -1,11 +1,11 @@
 import "./Specials.css";
 import { Link } from "react-router-dom";
 
-import SpecialCard from "./SpecialCard";
+import SpecialsCard from "./SpecialsCard";
 
-import GreekSalad from "../images/greek-salad.jpg";
+import GreekSalad from "../images/greeksalad.jpg";
 import Bruschetta from "../images/bruschetta.jpg";
-import LemonDessert from "../images/lemon-dessert.jpg";
+import LemonDessert from "../images/lemondessert.jpg";
 
 function Specials() {
   return (
@@ -21,21 +21,21 @@ function Specials() {
       </div>
 
       <div className="container specials-grid">
-        <SpecialCard
+        <SpecialsCard
           image={GreekSalad}
           title="Greek Salad"
           price="$12.99"
           description="Fresh lettuce, tomatoes, cucumbers, olives, feta cheese, and our homemade dressing."
         />
 
-        <SpecialCard
+        <SpecialsCard
           image={Bruschetta}
           title="Bruschetta"
           price="$8.99"
           description="Grilled bread topped with fresh tomatoes, garlic, basil, olive oil, and parmesan."
         />
 
-        <SpecialCard
+        <SpecialsCard
           image={LemonDessert}
           title="Lemon Dessert"
           price="$6.99"

@@ -1,11 +1,23 @@
 @import "./styles/variables.css";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #fff;
   color: var(--highlight-dark);
 }
+
+/* Typography */
 
 h1 {
   font-size: 64px;
@@ -21,37 +33,48 @@ h3 {
   text-transform: uppercase;
   font-weight: 800;
 }
- p {
+
+p {
   font-size: 16px;
   line-height: 1.5;
- }
+}
 
- span {
+span {
   font-size: 16px;
- }
+}
 
- img {
-  border-radius: 16px;
+/* Images */
+
+img {
+  display: block;
   max-width: 100%;
   height: auto;
- }
+  border-radius: 16px;
+}
 
- button {
+/* Buttons */
+
+button {
   background: var(--primary-yellow);
   border: none;
   border-radius: 16px;
-  padding: .8rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   font-weight: bold;
   cursor: pointer;
- }
+  transition: all 0.3s ease;
+}
 
- section {
-  padding: 4rem 2rem;
- }
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
 
- .App {
+/* Layout */
+
+.App {
   min-height: 100vh;
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -61,35 +84,76 @@ h3 {
   align-items: center;
 }
 
-header, nav, main, footer {
-  padding: 1rem;
+section {
+  padding: 5rem 2rem;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.logo-image {
+  width: 180px;
+  height: auto;
+}
+
+/* Navigation */
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2rem;
-  margin: 0;
-  padding: 0;
+}
+
+nav li {
+  position: relative;
 }
 
 nav a {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--highlight-dark);
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: var(--primary-yellow);
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-yellow);
+  transition: width 0.3s ease;
 }
 
-header img {
-  width: 180px;
-  height: auto;
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Main Layout */
+
+main {
+  min-height: 70vh;
+}
+
+/* Footer */
+
+footer {
+  padding: 3rem 2rem;
 }

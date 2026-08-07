@@ -1,0 +1,46 @@
+.booking-page {
+  padding: 5rem 2rem;
+  background: #edefee;
+}
+
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.booking-info h1 {
+  color: var(--primary-green);
+  margin-bottom: 1.5rem;
+}
+
+.booking-info p {
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.booking-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.booking-info li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .booking-container {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-info {
+    text-align: center;
+  }
+
+  .booking-info p {
+    margin: 0 auto 2rem;
+  }
+}

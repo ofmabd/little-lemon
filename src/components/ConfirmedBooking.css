@@ -1,0 +1,39 @@
+.confirmed-booking {
+  background: #edefee;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.confirmation-card {
+  background: white;
+  max-width: 700px;
+  padding: 3rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-card h1 {
+  color: var(--primary-green);
+  margin-bottom: 1.5rem;
+}
+
+.confirmation-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.confirmation-buttons button {
+  min-width: 220px;
+}

@@ -1,3 +1,4 @@
+import "./BookingForm.css";
 import { useState } from "react";
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
@@ -13,29 +14,22 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     occasion !== "" &&
     time !== "";
 
- const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const formData = {
-    date,
-    time,
-    guests,
-    occasion,
+    const formData = {
+      date,
+      time,
+      guests,
+      occasion,
+    };
+
+    submitForm(formData);
   };
 
-  submitForm(formData);
-};
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{
-        display: "grid",
-        maxWidth: "300px",
-        gap: "20px",
-      }}
-    >
-      <label htmlFor="res-date">Choose date</label>
+    <form className="booking-form" onSubmit={handleSubmit}>
+      <label htmlFor="res-date">Choose Date</label>
       <input
         type="date"
         id="res-date"
@@ -48,7 +42,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         }}
       />
 
-      <label htmlFor="res-time">Choose time</label>
+      <label htmlFor="res-time">Choose Time</label>
       <select
         id="res-time"
         required
@@ -62,7 +56,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         ))}
       </select>
 
-      <label htmlFor="guests">Number of guests</label>
+      <label htmlFor="guests">Number of Guests</label>
       <input
         type="number"
         id="guests"
@@ -70,7 +64,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         max="12"
         required
         value={guests}
-        onChange={(e) => setGuests(e.target.value)}
+        onChange={(e) => setGuests(Number(e.target.value))}
       />
 
       <label htmlFor="occasion">Occasion</label>
@@ -92,10 +86,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         value="Make Your Reservation"
         disabled={!isFormValid}
         aria-label="Make Your Reservation"
+        className="submit-btn"
       />
     </form>
   );
 }
 
 export default BookingForm;
-

@@ -3,6 +3,7 @@ import logo from "../logo.png";
 
 import { Link } from "react-router-dom";
 
+// Contains navigation links, contact information, address, and social media links. It also includes a copyright notice at the bottom.
 function Footer() {
   return (
     <footer className="footer">

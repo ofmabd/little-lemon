@@ -3,6 +3,7 @@ import "./Chicago.css";
 import Owners from "../images/owners.jpg";
 import Owner2 from "../images/owner2.jpg";
 
+//ABout section highlighting the restaurant's story and owners.
 function Chicago() {
   return (
     <section className="about">

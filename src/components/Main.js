@@ -20,6 +20,7 @@ export function updateTimes(state, action) {
   return window.fetchAPI(new Date(action));
 }
 
+// Initialize the available times and handles application routing.
 function Main() {
   const navigate = useNavigate();
 
@@ -30,10 +31,14 @@ function Main() {
   );
 
   function submitForm(formData) {
-    if (submitAPI(formData)) {
-        navigate("/confirmed");
-    }
+  const success = submitAPI(formData);
+
+  if (success) {
+    navigate("/confirmed");
+  } else {
+    alert("Unable to complete your reservation. Please try again.");
   }
+}
 
   return (
     <main>

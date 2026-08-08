@@ -7,6 +7,7 @@ import GreekSalad from "../images/greeksalad.jpg";
 import Bruschetta from "../images/bruschetta.jpg";
 import LemonDessert from "../images/lemondessert.jpg";
 
+// Displays this week's featured menu specials.
 function Specials() {
   return (
     <section className="specials">

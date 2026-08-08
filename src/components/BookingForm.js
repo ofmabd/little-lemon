@@ -7,6 +7,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
+// Form validation logic to ensure that the form is only submitted when all required fields are filled out correctly. The form is considered valid if the date is not empty, the number of guests is between 1 and 12, the occasion is not empty, and a time is selected.
   const isFormValid =
     date !== "" &&
     guests >= 1 &&
@@ -14,6 +15,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     occasion !== "" &&
     time !== "";
 
+//Handle reservation fomr validation and submission. If the form is valid, it calls the submitForm function with the form data.
   const handleSubmit = (e) => {
     e.preventDefault();
 

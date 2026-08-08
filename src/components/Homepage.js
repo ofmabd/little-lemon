@@ -3,6 +3,7 @@ import Specials from "./Specials";
 import CustomersSay from "./CustomersSay";
 import Chicago from "./Chicago";
 
+// Homepage sections displayed to the user.
 function Homepage() {
   return (
     <>

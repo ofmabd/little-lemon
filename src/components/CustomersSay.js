@@ -27,6 +27,7 @@ const testimonials = [
   },
 ];
 
+// Displays customers reviews.
 function CustomersSay() {
   return (
     <section className="testimonials">

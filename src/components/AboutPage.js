@@ -3,6 +3,7 @@ import "./AboutPage.css";
 import Owners from "../images/owners.jpg";
 import Owner2 from "../images/owner2.jpg";
 
+
 function AboutPage() {
   return (
     <section className="about-page">
